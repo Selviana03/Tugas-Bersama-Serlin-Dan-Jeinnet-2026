@@ -90,7 +90,8 @@ Kewajiban Perilaku: Metode displayInfo() memaksa setiap kelas turunan untuk memi
 
     <div class="layar">
         <h2>Source Code 2: electronic.dart (Inheritance)</h2>
-        <pre>import 'product.dart';
+        <p>Penjelasan electronic.dart (Inheritance)
+Menerapkan pewarisan untuk memperluas fungsi Product. Kelas ini mewarisi atribut dari Product dan memberikan implementasi spesifik pada metode displayInfo(), sehingga kita tidak perlu menulis ulang kode dasar.</p>
 class Electronic extends Product {
   Electronic(String name, double price) : super(name, price);
   @override
@@ -101,6 +102,8 @@ class Electronic extends Product {
     <div class="layar">
         <h2>Source Code 3: cart.dart (Composition)</h2>
         <pre>import 'product.dart';
+            Source Code 3: cart.dart (Composition)
+Mengelola kumpulan produk dalam sebuah keranjang. Kelas ini menggunakan list untuk menyimpan berbagai objek Product dan menyediakan metode terpusat untuk menghitung total harga (getTotal), sehingga logika transaksi tetap konsisten.</pre>
 class Cart {
   List<Product> items = [];
   void addItem(Product p) => items.add(p);
@@ -111,6 +114,8 @@ class Cart {
     <div class="layar">
         <h2>Source Code 4: user.dart (Encapsulation)</h2>
         <pre>import 'cart.dart';
+            Source Code 4: user.dart (Encapsulation)
+Melindungi privasi data. Variabel _name yang bersifat private tidak bisa diakses langsung dari luar kelas, melainkan harus melalui metode yang disediakan. Ini mencegah manipulasi data oleh pihak yang tidak berwenang.</pre>
 class User {
   String _name;
   Cart cart = Cart();
@@ -122,6 +127,8 @@ class User {
     <div class="layar">
         <h2>Source Code 5: main.dart (Eksekusi)</h2>
         <pre>import 'user.dart';
+            Source Code 5: main.dart (Eksekusi)
+Pusat kendali (integrasi). Di sini seluruh objek (User, Cart, Product) disatukan untuk menjalankan alur belanja yang nyata, mulai dari inisialisasi user hingga perhitungan akhir total pembayaran.</pre>
 import 'electronic.dart';
 
 void main() {
@@ -129,7 +136,7 @@ void main() {
   user.cart.addItem(Electronic("Smartphone", 5000000));
   print("Total Pembayaran: Rp${user.cart.getTotal()}");
 }</pre>
-    </div> https://dartpad.dev//?id=1234567890abcdef
+    </div> <iframe src="https://dartpad.dev/embed-dart.html?id=https%3A%2F%2Fdartpad.dev%2F%3Fid%3D5c0e154dd50af4a9ac856908061291bc" width="100%" height="500px"></iframe>
 
 
 </body>
