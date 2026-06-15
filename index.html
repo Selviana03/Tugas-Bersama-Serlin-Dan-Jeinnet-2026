@@ -59,17 +59,27 @@
     </div>
 
     <div class="layar">
-        <h2>3. Mengapa OOP?</h2>
-        <p>OOP mempermudah pengembangan dengan konsep <i>Encapsulation</i> (keamanan data), <i>Inheritance</i> (penggunaan kembali kode), dan <i>Modularity</i> (pemecahan sistem menjadi bagian-bagian kecil yang mudah dipelihara).</p>
-    </div>
-
+        <h2>3. Mengapa masalah shoppe lebih baik diselesaikan dengan OOP?</h2>
+        <p>OOP ​Enkapsulasi: Melindungi data sensitif (seperti saldo) dari akses luar.
+​Inheritance: Memudahkan penambahan fitur produk baru tanpa merombak sistem dasar.
+​Modularitas: Membagi sistem menjadi bagian-bagian kecil yang mudah dikelola.</p>
     <div class="layar">
         <h2>4. Langkah Penyelesaian</h2>
-        <p>Analisis Entitas &rarr; Desain Class &rarr; Pemecahan File Dart &rarr; Integrasi Sistem &rarr; Pengujian.</p>
+        <p>4. Langkah Penyelesaian
+Analisis: Memetakan entitas (User, Produk, Cart, Transaksi).
+Desain: Membuat kerangka kelas (blueprint) dengan prinsip OOP.
+Implementasi: Membagi logika ke dalam 5 file terpisah untuk mencegah spaghetti code.
+Validasi: Menggunakan metode terpusat untuk memastikan stok dan harga selalu sinkron.
+Pengujian: Simulasi transaksi untuk memastikan alur dari keranjang ke pembayaran berjalan mulus.</p>
     </div>
 
     <div class="layar">
         <h2>Source Code 1: product.dart (Abstraksi)</h2>
+        <p></p>Penjelasan product.dart (Abstraksi)
+File ini berfungsi sebagai kontrak sistem yang memastikan standarisasi seluruh produk.
+Sebagai Cetakan Umum: Kata kunci abstract menegaskan bahwa Product adalah kategori umum. Kita tidak bisa membuat objek produk tanpa jenis yang spesifik, sehingga data di sistem selalu teratur.
+Standarisasi Atribut: Setiap produk wajib memiliki name dan price. Ini memudahkan modul lain (seperti Keranjang) mengolah data produk dengan format yang seragam.
+Kewajiban Perilaku: Metode displayInfo() memaksa setiap kelas turunan untuk memiliki fungsi tampilan sendiri. Jika tidak, sistem akan menolak (error), sehingga konsistensi perilaku objek tetap terjaga.</div>
         <pre>abstract class Product {
   String name;
   double price;
