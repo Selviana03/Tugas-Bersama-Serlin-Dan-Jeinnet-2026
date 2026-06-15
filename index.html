@@ -2,57 +2,126 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Studi Kasus E-Commerce</title>
+    <title>Studi Kasus OOP Shopee - Laporan Lengkap</title>
     <style>
-        body { font-family: 'Consolas', monospace; background-color: #1e1e1e; color: #d4d4d4; padding: 20px; line-height: 1.6; }
-        h1 { color: #4fc1ff; border-bottom: 1px solid #333; padding-bottom: 10px; }
-        h2 { color: #ce9178; margin-top: 25px; }
-        .container { background-color: #252526; padding: 20px; border-radius: 8px; border: 1px solid #333; }
-        ul, ol { margin-left: 20px; }
-        code { color: #9cdcfe; }
+        /* Tema Langit Malam */
+        body { 
+            background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); 
+            color: #d1d1d1; 
+            font-family: 'Segoe UI', sans-serif; 
+            padding: 20px; 
+            margin: 0;
+        }
+        .layar { 
+            background: rgba(255, 255, 255, 0.05); 
+            border: 1px solid #4a4a8c;
+            border-radius: 15px; 
+            padding: 30px; 
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1, h2 { color: #ffd700; border-bottom: 2px solid #4a4a8c; padding-bottom: 10px; }
+        pre { 
+            background: #000; 
+            color: #00ff00; 
+            padding: 15px; 
+            border-radius: 8px; 
+            overflow-x: auto; 
+            border-left: 5px solid #ffd700;
+            font-size: 14px;
+        }
+        .link-git { color: #81d4fa; font-weight: bold; text-decoration: none; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Studi Kasus: Sistem Penjualan E-Commerce Shopee</h1>
+    <div class="layar">
+        <h1>Studi Kasus: Sistem Penjualan E-Commerce Shopee</h1>
+        <p><strong>Penyusun:</strong><br>
+        1. Serlin Selviana Giay (251410030) | Kelas: SI2A<br>
+        2. Jeinnet Verara Ayomi (251410033) | Kelas: SI2A</p>
+        <p>Repository: <a href="https://github.com/Serlin-Jeinnet/Shopee-OOP" class="link-git" target="_blank">github.com/Serlin-Jeinnet/Shopee-OOP</a></p>
+    </div>
 
-    <h2>1. Latar Belakang Shopee</h2>
-    <p>Shopee adalah platform e-commerce yang menghubungkan jutaan pembeli dan penjual. Dengan skala transaksi yang masif, sistem memerlukan arsitektur yang terstruktur agar pengelolaan data produk dan transaksi berjalan efisien.</p>
+    <div class="layar">
+        <h2>1. Latar Belakang Shopee</h2>
+        <p>Shopee merupakan ekosistem e-commerce masif yang membutuhkan manajemen data yang sangat kompleks. Pendekatan pemrograman prosedural tidak lagi efisien untuk mengelola jutaan interaksi produk dan user. Paradigma OOP diterapkan untuk menciptakan sistem yang modular, aman, dan mudah dikembangkan di masa depan.</p>
+    </div>
 
-    <h2>2. Masalah tentang Shopee</h2>
-    <ul>
-        <li>Ketidaksiapan sistem dalam menangani sinkronisasi stok secara <i>real-time</i> saat <i>flash sale</i>.</li>
-        <li>Kompleksitas pemeliharaan kode saat penambahan fitur baru di sistem yang sudah besar.</li>
-        <li>Kesulitan klasifikasi berbagai tipe produk (Elektronik, Fashion, dll) dalam satu alur transaksi.</li>
-    </ul>
+    <div class="layar">
+        <h2>2. Masalah yang Sering Dihadapi</h2>
+        <ul>
+            <li><strong>Sinkronisasi Stok:</strong> Data stok tidak sinkron secara <i>real-time</i> saat terjadi transaksi massal (misal: flash sale).</li>
+            <li><strong>Kompleksitas Skalabilitas:</strong> Penambahan kategori produk baru sering menyebabkan sistem menjadi tidak stabil.</li>
+            <li><strong>Integritas Data:</strong> Risiko manipulasi data transaksi jika akses atribut tidak dibatasi (kurangnya enkapsulasi).</li>
+        </ul>
+    </div>
 
-    <h2>3. Mengapa Masalah Ini Lebih Baik Diselesaikan dengan OOP?</h2>
-    <p>Pendekatan OOP sangat ideal karena:</p>
-    <ul>
-        <li><strong>Inheritance:</strong> Memungkinkan pembuatan kelas produk umum yang diturunkan ke produk spesifik tanpa menulis ulang kode.</li>
-        <li><strong>Enkapsulasi:</strong> Menyembunyikan logika transaksi yang sensitif dari akses luar.</li>
-        <li><strong>Abstraksi:</strong> Menyederhanakan kompleksitas sistem menjadi objek-objek yang mudah dikelola.</li>
-    </ul>
+    <div class="layar">
+        <h2>3. Mengapa OOP?</h2>
+        <p>OOP mempermudah pengembangan dengan konsep <i>Encapsulation</i> (keamanan data), <i>Inheritance</i> (penggunaan kembali kode), dan <i>Modularity</i> (pemecahan sistem menjadi bagian-bagian kecil yang mudah dipelihara).</p>
+    </div>
 
-    <h2>4. Langkah-Langkah Menyelesaikan Masalah</h2>
-    <ol>
-        <li><strong>Analisis:</strong> Mengidentifikasi objek utama (User, Product, Cart, Transaction).</li>
-        <li><strong>Desain Kelas:</strong> Mendefinisikan atribut dan metode untuk tiap objek.</li>
-        <li><strong>Modularisasi:</strong> Membagi sistem ke dalam 5 file terpisah untuk menjaga kebersihan kode.</li>
-        <li><strong>Implementasi:</strong> Menghubungkan antar objek (misal: Cart menggunakan objek Product).</li>
-        <li><strong>Pengujian:</strong> Memvalidasi alur transaksi dari keranjang hingga pembayaran.</li>
-    </ol>
+    <div class="layar">
+        <h2>4. Langkah Penyelesaian</h2>
+        <p>Analisis Entitas &rarr; Desain Class &rarr; Pemecahan File Dart &rarr; Integrasi Sistem &rarr; Pengujian.</p>
+    </div>
 
-    <h2>Penjelasan Singkat Source Code 1 - 5</h2>
-    <ul>
-        <li><code>Code 1 (product.dart)</code>: Kelas abstrak sebagai fondasi/blueprint setiap produk.</li>
-        <li><code>Code 2 (electronic.dart)</code>: Implementasi pewarisan (inheritance) untuk produk spesifik.</li>
-        <li><code>Code 3 (cart.dart)</code>: Logika untuk menampung daftar belanjaan.</li>
-        <li><code>Code 4 (user.dart)</code>: Manajemen data profil pembeli.</li>
-        <li><code>Code 5 (transaction.dart)</code>: Eksekusi akhir penggabungan seluruh objek dalam proses pembayaran.</li>
-    </ul>
-</div>
+    <div class="layar">
+        <h2>Source Code 1: product.dart (Abstraksi)</h2>
+        <pre>abstract class Product {
+  String name;
+  double price;
+  Product(this.name, this.price);
+  void displayInfo();
+}</pre>
+    </div>
+
+    <div class="layar">
+        <h2>Source Code 2: electronic.dart (Inheritance)</h2>
+        <pre>import 'product.dart';
+class Electronic extends Product {
+  Electronic(String name, double price) : super(name, price);
+  @override
+  void displayInfo() => print("Elektronik: $name - Rp$price");
+}</pre>
+    </div>
+
+    <div class="layar">
+        <h2>Source Code 3: cart.dart (Composition)</h2>
+        <pre>import 'product.dart';
+class Cart {
+  List<Product> items = [];
+  void addItem(Product p) => items.add(p);
+  double getTotal() => items.fold(0, (s, i) => s + i.price);
+}</pre>
+    </div>
+
+    <div class="layar">
+        <h2>Source Code 4: user.dart (Encapsulation)</h2>
+        <pre>import 'cart.dart';
+class User {
+  String _name;
+  Cart cart = Cart();
+  User(this._name);
+  String get name => _name;
+}</pre>
+    </div>
+
+    <div class="layar">
+        <h2>Source Code 5: main.dart (Eksekusi)</h2>
+        <pre>import 'user.dart';
+import 'electronic.dart';
+
+void main() {
+  var user = User("Serlin & Jeinnet");
+  user.cart.addItem(Electronic("Smartphone", 5000000));
+  print("Total Pembayaran: Rp${user.cart.getTotal()}");
+}</pre>
+    </div>
 
 </body>
 </html>
