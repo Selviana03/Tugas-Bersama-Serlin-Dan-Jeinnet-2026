@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Studi Kasus E-Commerce</title>
+    <style>
+        body { font-family: 'Consolas', monospace; background-color: #1e1e1e; color: #d4d4d4; padding: 20px; line-height: 1.6; }
+        h1 { color: #4fc1ff; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        h2 { color: #ce9178; margin-top: 25px; }
+        .container { background-color: #252526; padding: 20px; border-radius: 8px; border: 1px solid #333; }
+        ul, ol { margin-left: 20px; }
+        code { color: #9cdcfe; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Studi Kasus: Sistem Penjualan E-Commerce Shopee</h1>
+
+    <h2>1. Latar Belakang Shopee</h2>
+    <p>Shopee adalah platform e-commerce yang menghubungkan jutaan pembeli dan penjual. Dengan skala transaksi yang masif, sistem memerlukan arsitektur yang terstruktur agar pengelolaan data produk dan transaksi berjalan efisien.</p>
+
+    <h2>2. Masalah tentang Shopee</h2>
+    <ul>
+        <li>Ketidaksiapan sistem dalam menangani sinkronisasi stok secara <i>real-time</i> saat <i>flash sale</i>.</li>
+        <li>Kompleksitas pemeliharaan kode saat penambahan fitur baru di sistem yang sudah besar.</li>
+        <li>Kesulitan klasifikasi berbagai tipe produk (Elektronik, Fashion, dll) dalam satu alur transaksi.</li>
+    </ul>
+
+    <h2>3. Mengapa Masalah Ini Lebih Baik Diselesaikan dengan OOP?</h2>
+    <p>Pendekatan OOP sangat ideal karena:</p>
+    <ul>
+        <li><strong>Inheritance:</strong> Memungkinkan pembuatan kelas produk umum yang diturunkan ke produk spesifik tanpa menulis ulang kode.</li>
+        <li><strong>Enkapsulasi:</strong> Menyembunyikan logika transaksi yang sensitif dari akses luar.</li>
+        <li><strong>Abstraksi:</strong> Menyederhanakan kompleksitas sistem menjadi objek-objek yang mudah dikelola.</li>
+    </ul>
+
+    <h2>4. Langkah-Langkah Menyelesaikan Masalah</h2>
+    <ol>
+        <li><strong>Analisis:</strong> Mengidentifikasi objek utama (User, Product, Cart, Transaction).</li>
+        <li><strong>Desain Kelas:</strong> Mendefinisikan atribut dan metode untuk tiap objek.</li>
+        <li><strong>Modularisasi:</strong> Membagi sistem ke dalam 5 file terpisah untuk menjaga kebersihan kode.</li>
+        <li><strong>Implementasi:</strong> Menghubungkan antar objek (misal: Cart menggunakan objek Product).</li>
+        <li><strong>Pengujian:</strong> Memvalidasi alur transaksi dari keranjang hingga pembayaran.</li>
+    </ol>
+
+    <h2>Penjelasan Singkat Source Code 1 - 5</h2>
+    <ul>
+        <li><code>Code 1 (product.dart)</code>: Kelas abstrak sebagai fondasi/blueprint setiap produk.</li>
+        <li><code>Code 2 (electronic.dart)</code>: Implementasi pewarisan (inheritance) untuk produk spesifik.</li>
+        <li><code>Code 3 (cart.dart)</code>: Logika untuk menampung daftar belanjaan.</li>
+        <li><code>Code 4 (user.dart)</code>: Manajemen data profil pembeli.</li>
+        <li><code>Code 5 (transaction.dart)</code>: Eksekusi akhir penggabungan seluruh objek dalam proses pembayaran.</li>
+    </ul>
+</div>
+
+</body>
+</html>
